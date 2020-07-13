@@ -15,7 +15,7 @@ With Authorisation Code flow Okta returns a "thin" ID token which has some claim
 for example given_name and family_name. However an access token is also returned which can
 be used to access the standard OpenID Connect userinfo endpoint
 
-If you have the Okta API management module you are able to bake custom claims into the ID token by using issuer url on your authorization server for example https://acme.okta.com/oauth2/default. Whilst it's possible to bake any custom claims into the ID token the OpenID standard claims cannot be included (producing the error "The claim name must be unique within an authorization server.") for example given_name which means a call to the userinfo endpoint is required anyway.
+If you have the Okta API management module you are able to bake custom claims into the ID token by using issuer url on your authorization server for example https://acme.okta.com/oauth2/default. Whilst it's possible to bake any custom claims into the ID token the OpenID standard claims cannot be included (producing the error "The claim name must be unique within an authorization server."). For example given_name cannot be added (given_name1 could be added) however as you probably want to stick to the OpenID specification a call to the userinfo endpoint is nessisary to retrieve this data.
 
 If you use implicit mode and request an ID token only then a "fat" token is returned. This does contain all of the custom claims however as this is a server side implimentation the example uses auth code flow with a call to the userinfo endpoint.
 
