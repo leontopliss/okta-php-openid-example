@@ -19,6 +19,23 @@ If you have the Okta API management module you are able to bake custom claims in
 
 If you use implicit mode and request an ID token only then a "fat" token is returned. This does contain all of the custom claims however as this is a server side implimentation the example uses auth code flow with a call to the userinfo endpoint.
 
+## Okta Setup
+
+If you don't have an Okta tenant it's possible to create limited tenant for testing by visiting https://developer.okta.com/signup/
+
+When logged into the admin dashboard:
+* Applications -> Create New Application
+* Platform = 'Web', Select 'OpenID Connect'
+* Enter an application name
+* Enter a redirect URL. To the docker example below work: http://localhost
+
+This redirects you to the application, then:
+* On the general tab: Only Authorization code should be selected (default)
+* Copy the client ID and credentials, these will be required in the application config (docker example openid_config.env)
+* On the assignments tab assign users
+
+These steps will allow the docker example below to work
+
 ## To Run
 
 Install docker (If you are testing on a windows PC or MacOSX then you can use Docker Desktop)
