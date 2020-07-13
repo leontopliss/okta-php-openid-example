@@ -50,7 +50,7 @@ $pretty_userinfo_json = json_encode($userinfo, JSON_PRETTY_PRINT);
 # 
 # This example does not impliment signout i.e. $oidc->signOut($accessToken, $redirect)
 # this method calls the signout URL (end_session_endpoint) which is provided as
-# part of the metadata
+# part of the openid metadata
 # In production you should do this along with unseting a session
 #
 # As it's just an example the next part just dumps the data to the browser
